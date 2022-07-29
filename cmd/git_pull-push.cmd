@@ -30,7 +30,7 @@ if __%2__ == ____ (
 set "com=git fetch && git pull && git add . && git status"
 set "com=%com% && git commit -m !msg! && git push"
 
-if exist "!target!\.git" (
+if exist "%target%\.git" (
     call:log "Starting workflow"
     pushd "%target%"
     dir | find /i "%target%"
