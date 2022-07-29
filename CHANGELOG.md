@@ -18,6 +18,12 @@ Types of changes:
 
 - Announce things to come here
 
+## [0.2.0] - 2022-07-30
+
+### Changed
+
+- Error levels to CMD for committing and pushing folders
+
 ## [0.1.0] - 2022-07-29
 
 ### Added
