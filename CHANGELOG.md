@@ -18,6 +18,12 @@ Types of changes:
 
 - Announce things to come here
 
+## [0.3.0] - 2022-08-01
+
+### Added
+
+- `cmd/create-conda-python-versions.cmd` to download python versions
+
 ## [0.2.0] - 2022-07-30
 
 ### Changed
