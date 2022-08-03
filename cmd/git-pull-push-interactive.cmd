@@ -44,5 +44,6 @@ goto:eof
 
 :cleanup
     echo %msg_choice% %1
+    timeout /t 1
     timeout /t 5
 exit /b %1
