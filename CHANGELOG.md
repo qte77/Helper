@@ -1,4 +1,12 @@
-# Changelog
+<!-- markdown lint configuration, can be separated into .markdownlint.json -->
+<!-- Multiple Headings with same Content -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- top 2 level with = and -, others with # -->
+<!-- markdownlint-configure-file {
+  "MD003": { "style": "setext_with_atx" }
+} -->
+Changelog
+===
 
 All notable changes to this project will be documented in this file.
 
@@ -14,23 +22,34 @@ Types of changes:
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-## [Unreleased]
+[Unreleased]
+---
 
 - Announce things to come here
 
-## [0.3.0] - 2022-08-01
+[0.4.0] - 2022-08-03
+---
+
+### Added
+
+- `cmd/git-pull-push-interactive.cmd` as an interactive wrapper for `cmd/git-pull-push.cmd`
+
+[0.3.0] - 2022-08-01
+---
 
 ### Added
 
 - `cmd/create-conda-python-versions.cmd` to download python versions
 
-## [0.2.0] - 2022-07-30
+[0.2.0] - 2022-07-30
+---
 
 ### Changed
 
 - Error levels to CMD for committing and pushing folders
 
-## [0.1.0] - 2022-07-29
+[0.1.0] - 2022-07-29
+---
 
 ### Added
 
