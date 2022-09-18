@@ -21,12 +21,14 @@ if exist "%cmd_to_use%" (
         )
     echo %msg_git_start%
     "%cmd_to_use%" "!usr_path_to_git!" "!usr_commit_msg!"
-    goto:cleanup %errorlevel%
+    set elvl=%errorlevel%
+    goto:cleanup
 ) else (
     call:out_log path "%target%"
     goto:cleanup -1
 )
-goto:cleanup %errorlevel%
+set elvl=%errorlevel%
+goto:cleanup
 
 :set_vars
     set cmd_to_use=git-pull-push.cmd
@@ -34,7 +36,6 @@ goto:cleanup %errorlevel%
     set msg_commsg=Input the commit message to use: 
     set msg_exit=Try again or type "ex" for exit.
     set msg_git_start=Starting git with the given inputs
-    set msg_choice=Done. Exiting with ErrorLevel
 goto:eof
 
 :out_log
@@ -43,7 +44,7 @@ goto:eof
 goto:eof
 
 :cleanup
-    echo %msg_choice% %1
+    echo %0 exiting with %elvl%
     timeout /t 1
     timeout /t 5
 exit /b %1

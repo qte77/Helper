@@ -6,11 +6,13 @@ call:set_error_levels
 if __%1__ == __?__ (
     call:log "Commits and pushes git from 1::target with 2::message"
     call:log "Example: this.cmd 'path\to/folder here' 'commit message'"
-    goto:cleanup %elvl_hlp%
+    set elvl=%elvl_hlp%
+    goto:cleanup
 )
 if __%1__ == ____ (
     call:log "Path to folder with .git required"
-    goto:cleanup %elvl_tar%
+    set elvl=%elvl_tar%
+    goto:cleanup
 ) else (
     set target=%1
     set target=!target:"=!
@@ -19,7 +21,8 @@ if __%1__ == ____ (
 )
 if __%2__ == ____ (
     call:log "Commit message required"
-    goto:cleanup %elvl_msg%
+    set elvl=%elvl_msg%
+    goto:cleanup
 ) else (
     set msg=%2
     set msg=!msg:"=!
@@ -36,13 +39,16 @@ if exist "%target%\.git" (
     dir | find /i "%target%"
     %com%
     popd
-    goto:cleanup %elvl_suc%
+    set elvl=%elvl_tnf%
+    goto:cleanup
 ) else (
     call:log "Target '%target%' not found"
-    goto:cleanup %elvl_tnf%
+    set elvl=%elvl_tnf%
+    goto:cleanup
 )
 
-goto:cleanup %elvl_unk%
+set elvl=%elvl_unk%
+goto:cleanup
 
 :log
     set log=%*
@@ -60,5 +66,5 @@ goto:eof
 goto:eof
 
 :cleanup
-    echo Exiting with error level %1
+    echo %0 exiting with error level %elvl%
 exit /b %1

@@ -30,6 +30,11 @@ Types of changes:
 [0.5.0] - 2022-08-03
 ---
 
+### Added
+
+- `sh/install-git-cred-mgr.sh` to install Microsoft git credential manager
+  - local persistent storage of PTA
+
 ### Changed
 
 - `git-pull-push-interactive.cmd` to provide timeout after run

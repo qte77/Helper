@@ -4,7 +4,7 @@ Contains some accompanying helper scripts for different platforms and use cases.
 
 ## Structure
 
-```
+```sh
 /
 ├─ cmd/
 ├─ ipynb/
